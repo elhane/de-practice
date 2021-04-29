@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<!-- (c) Digital Element || https://d-element.ru/ -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link href="styles/main.css" rel="stylesheet"></head>
+<body>
+
+<div class="flow-container ">
+    <header class="header">
+
+    </header>
+    <div class="content">
+
+<div>
+    <div class="container">
+        <h1>Практическое обучение и экзаменация по front-end</h1>
+    </div>
+
+    <section class="range-block section section--mb-big section--bg">
+        <div class="container">
+            <h2>Бегунок</h2>
+                <div class="range" id="range"></div>
+        </div>
+    </section>
+
+    <section class="slider-block container section">
+        <h2>Слайдер</h2>
+        <div class="slider">
+            <div class="swiper-container slider__column">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slider__slide">
+                        <img src="images/slide-1.jpg" srcset="/images/slide-1@2x.jpg" width="615" height="300" alt="" loading=lazy>
+                    </div>
+                    <div class="swiper-slide slider__slide">
+                        <img src="images/slide-2.jpg" srcset="images/slide-2@2x.jpg" width="615" height="300" alt="" loading=lazy>
+                    </div>
+                    <div class="swiper-slide slider__slide">
+                        <img src="images/slide-3.jpg" srcset="images/slide-3@2x.jpg" width="615" height="300" alt="" loading=lazy>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__column slider__column--controls">
+                <div class="slider__pagination"></div>
+                <div class="slider__navigation">
+                    <div class="swiper-button-prev slider__button slider__button--prev"></div>
+                    <div class="swiper-button-next slider__button slider__button--next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-block section section--bg">
+        <div class="container">
+            <h2>Карта</h2>
+            <div class="map" id="map" data-js-center='["55.163319","61.414759"]' data-js-coords='[ { "pos": ["55.165924","61.413734"], "id": "home" } , { "pos": [55.163299,61.404573], "id": "person" }, { "pos": [55.161987,61.423004], "id": "clock" } ]'>
+                <script src="https://api-maps.yandex.ru/2.1/?apikey=6dbfce26-c116-4990-9f20-00fa643012f1&lang=ru_RU" type="text/javascript">
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal-block section container">
+        <h2>Кнопка с модальным окном</h2>
+        <a href="#modal-selected-values" class="popup-modal button reset-link" data-js-popup-btn>
+            Открыть модальное окно
+        </a>
+    </section>
+
+    <section class="form-block section section--bg">
+        <div class="container">
+            <h2>Форма</h2>
+            <form class="modal__form form" data-form novalidate>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="phone">Ваш телефон</label>
+                        <input type="tel" class="form-input inputmask" id="phone" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _" required data-input-required="phone" data-input-placeholder="Ваш телефон">
+                        <svg class="message-error__icon" width="20" height="20">
+                            <use xlink:href="#icon-error"></use>
+                        </svg>
+                    </div>
+                    <div class="form-col">
+                        <label for="surname">Ваша фамилия</label>
+                        <input type="text" class="form-input" id="surname" placeholder="Ваша фамилия" data-input-placeholder="Ваша фамилия" data-input-required="name">
+                        <svg class="message-error__icon" width="20" height="20">
+                            <use xlink:href="#icon-error"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="comment">Комментарий*</label>
+                        <textarea class="form-input" id="comment" placeholder="Комментарий" required data-input-required="text" data-input-placeholder="Комментарий"></textarea>
+                        <svg class="message-error__icon" width="20" height="20">
+                            <use xlink:href="#icon-error"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="form-row form-row--confirm">
+                    <div class="form-col">
+                        <label class="checkbox">
+                            <input class="checkbox__input" type="checkbox" value="Y" name="pers" tabindex="-1" required data-input-required="checkbox" checked>
+                            <span class="checkbox__emulator">
+                                <svg class="checkbox__icon i-icon">
+                                    <use xlink:href="#icon-check"></use>
+                                </svg>
+                            </span>
+                            <span class="checkbox__label">
+                                Согласен на обработку <a href="">персональных данных</a>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="form-col form-col--btn">
+                        <button class="button" type="submit">Отправить форму</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+
+        </div>
+        <footer class="footer">
+        </footer>
+        </div>
+        <div class="modal modal--feedback" id="modal-feedback">
+    <div class="modal__top">
+        <div class="modal__heading h1">
+            Обратная связь
+        </div>
+        <div class="modal__subheading">
+            заполните форму обратной связи и мы обязательно с вами свяжемся
+        </div>
+    </div>
+    <div class="modal__body">
+        <form class="modal__form form" data-form novalidate>
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="">Ваше имя</label>
+                    <input type="text" class="form-input" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="">Контактный телефон</label>
+                    <input type="text" class="form-input inputmask" required data-input-required="phone">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="">Электронная почта</label>
+                    <input type="email" class="form-input" required data-input-required="email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="">Текст вопроса</label>
+                    <textarea class="form-input" name="" required></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="file-attacher" data-file-attacher>
+                        <input id="file-attacher-1" class="file-attacher__input" type="file" name="files" data-file-attacher-input>
+
+                        <div class="file-attacher__btn">
+                            <label for="file-attacher-1" data-file-attacher-add-btn>
+                                Прикрепить файл
+                            </label>
+                        </div>
+
+                        <ul class="file-attacher__list" data-file-attacher-file-list></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-col">
+                    <div class="file-attacher" data-file-attacher>
+                        <input id="file-attacher-2" class="file-attacher__input" type="file" name="files_multiple" multiple data-file-attacher-input>
+
+                        <div class="file-attacher__btn">
+                            <label for="file-attacher-2" data-file-attacher-add-btn>
+                                Прикрепить файл (multiple)
+                            </label>
+                        </div>
+
+                        <ul class="file-attacher__list" data-file-attacher-file-list></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-col">
+                    <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" value="Y" name="pers" tabindex="-1" required data-input-required="checkbox">
+                        <span class="checkbox__emulator">
+                            <svg class="checkbox__icon i-icon">
+                                <use xlink:href="#icon-check"></use>
+                            </svg>
+                        </span>
+                        <span class="checkbox__label">
+                            Согласен на обработку <a href="">персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="form-row form-row--confirm">
+                <div class="form-col">
+                    <button>Оставить заявку</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal modal--success" id="modal-success">
+    <div class="modal__top">
+        <div class="modal__heading h1">
+            Заявка отправлена
+        </div>
+        <div class="modal__subheading">
+            Спасибо за обращение! Мы обязательно свяжемся с вами.
+        </div>
+    </div>
+</div>
+<div class="modal modal--error" id="modal-error">
+    <div class="modal__top">
+        <div class="modal__heading h1">
+            Произошла ошибка!
+        </div>
+        <div class="modal__subheading">
+            Попытайтесь позже
+        </div>
+    </div>
+</div>
+<div class="modal modal--selected-values" id="modal-selected-values">
+    <div class="modal__top">
+        <div class="modal__heading h2">
+            Поп-ап
+        </div>
+        <div class="modal__subheading">
+            Выбранные значения:
+        </div>
+        <p class="modal__text">Минимум: <span id="lower-value"></span></p>
+        <p class="modal__text">Максимум: <span id="upper-value"></span></p>
+        <div class="modal__subheading">
+            Выбранная метка:
+        </div>
+        <p class="modal__text">Координаты: <span id="selected-mark"></span></p>
+    </div>
+</div>
+        <div class="overlay"></div>
+        <div class="loader">
+            <div></div>
+        </div>
+    <script type="text/javascript" src="bundle.js"></script></body>
+</html>
