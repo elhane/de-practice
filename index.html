@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <!-- (c) Digital Element || https://d-element.ru/ -->
 <html lang="ru">
@@ -7,6 +8,8 @@
     <title>Главная</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="fonts/ProximaNova-RegularIt.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="fonts/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin="">
 <link href="styles/main.css" rel="stylesheet"></head>
 <body>
 
@@ -24,7 +27,7 @@
     <section class="range-block section section--mb-big section--bg">
         <div class="container">
             <h2>Бегунок</h2>
-                <div class="range" id="range"></div>
+            <div class="range" id="range" data-js-range-options='{ "start": [0, 100], "connect": true, "range": {"min": 0, "max": 100}, "margin": 23, "tooltips": [wNumb({"decimals": 0,"prefix": "от ","suffix": " $"}), wNumb({"decimals": 0, "prefix": "до ","suffix": " $"})] }'></div>
         </div>
     </section>
 
@@ -32,23 +35,36 @@
         <h2>Слайдер</h2>
         <div class="slider">
             <div class="swiper-container slider__column">
+                
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide slider__slide">
-                        <img src="images/slide-1.jpg" srcset="images/slide-1@2x.jpg" width="615" height="300" alt="" loading=lazy>
-                    </div>
-                    <div class="swiper-slide slider__slide">
-                        <img src="images/slide-2.jpg" srcset="images/slide-2@2x.jpg" width="615" height="300" alt="" loading=lazy>
-                    </div>
-                    <div class="swiper-slide slider__slide">
-                        <img src="images/slide-3.jpg" srcset="images/slide-3@2x.jpg" width="615" height="300" alt="" loading=lazy>
-                    </div>
+                    
+                        <div class="swiper-slide slider__slide">
+                            <img src="images/slide-1.jpg" srcset="images/slide-1@2x.jpg" width="615" height="300" alt="" loading=lazy>
+                        </div>
+                    
+                        <div class="swiper-slide slider__slide">
+                            <img src="images/slide-2.jpg" srcset="images/slide-2@2x.jpg" width="615" height="300" alt="" loading=lazy>
+                        </div>
+                    
+                        <div class="swiper-slide slider__slide">
+                            <img src="images/slide-3.jpg" srcset="images/slide-3@2x.jpg" width="615" height="300" alt="" loading=lazy>
+                        </div>
+                    
                 </div>
             </div>
             <div class="slider__column slider__column--controls">
                 <div class="slider__pagination"></div>
                 <div class="slider__navigation">
-                    <div class="swiper-button-prev slider__button slider__button--prev"></div>
-                    <div class="swiper-button-next slider__button slider__button--next"></div>
+                    <div class="swiper-button-prev slider__button slider__button--prev">
+                        <svg width="13" height="16">
+                            <use xlink:href="#icon-arrow"></use>
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next slider__button slider__button--next">
+                        <svg width="13" height="16">
+                            <use xlink:href="#icon-arrow"></use>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,7 +74,7 @@
         <div class="container">
             <h2>Карта</h2>
             <div class="map" id="map" data-map-center='["55.163319","61.414759"]' data-map-coords='[ { "pos": [55.165924,61.413734], "id": "home" } , { "pos": [55.163299,61.404573], "id": "person" }, { "pos": [55.161987,61.423004], "id": "clock" } ]'>
-                <script src="https://api-maps.yandex.ru/2.1/?apikey=6dbfce26-c116-4990-9f20-00fa643012f1&lang=ru_RU" type="text/javascript"></script>
+                <script defer src="https://api-maps.yandex.ru/2.1/?apikey=6dbfce26-c116-4990-9f20-00fa643012f1&lang=ru_RU" data-map-script></script>
             </div>
         </div>
     </section>
@@ -66,7 +82,7 @@
     <section class="modal-block section container">
         <h2>Кнопка с модальным окном</h2>
         <a href="#modal-selected-values" class="popup-modal button reset-link" data-js-popup-btn>
-            Открыть модальное окно
+           <span>Открыть модальное окно</span>
         </a>
     </section>
 
